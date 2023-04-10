@@ -23,7 +23,12 @@ namespace EgyptBYU.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Burials()
+        {
+            return View();
+        }
+
+        public IActionResult Analysis()
         {
             return View();
         }
