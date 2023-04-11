@@ -26,7 +26,10 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Burials">Burials</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Analysis">Analysis</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="SupAnalysis">Supervised Analysis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="UnAnalysis">Unsupervised Analysis</a>
                         </li>
                     </ul>
                 </div>
@@ -34,7 +37,6 @@
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

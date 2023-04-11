@@ -28,7 +28,12 @@ namespace EgyptBYU.Controllers
             return View();
         }
 
-        public IActionResult Analysis()
+        public IActionResult UnAnalysis()
+        {
+            return View();
+        }
+
+        public IActionResult SupAnalysis()
         {
             return View();
         }
