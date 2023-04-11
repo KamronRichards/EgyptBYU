@@ -9,8 +9,8 @@
 @if (showBanner)
 {
     <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        Accept the cookie if you wish to continue. <a asp-page="/Privacy">Learn More</a>.
-        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+        Accept the cookie if you wish to continue. Then, refresh the page to get rid of this notification <a asp-page="/Privacy">Learn More</a>.
+        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString" onclick="location.reload();">
             <span aria-hidden="true">Accept</span>
         </button>
     </div>
