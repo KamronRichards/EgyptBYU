@@ -80,11 +80,11 @@ namespace EgyptBYU
             app.UseAuthentication();
             app.UseAuthorization();
 
+
             app.Use(async (context, next) => {
                 context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src 'self' 'sha256-m1igTNlg9PL5o60ru2HIIK6OPQet2z9UgiEAhCyg/RU='; style-src 'self' https://cdn.jsdelivr.net; font-src 'self'; img-src 'self'; frame-src 'self'");
                 await next();
-
-            });
+                });
 
             app.UseEndpoints(endpoints =>
             {
