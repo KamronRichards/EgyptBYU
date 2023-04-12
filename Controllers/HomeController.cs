@@ -1,4 +1,5 @@
 ﻿using EgyptBYU.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -27,12 +28,10 @@ namespace EgyptBYU.Controllers
         {
             return View();
         }
-
         public IActionResult UnAnalysis()
         {
             return View();
         }
-
         public IActionResult SupAnalysis()
         {
             return View();
