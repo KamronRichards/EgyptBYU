@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EgyptBYU.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize]
     public class UserRoleManagementController : Controller
     {
         private readonly UserManager<IdentityUser> userManager;
