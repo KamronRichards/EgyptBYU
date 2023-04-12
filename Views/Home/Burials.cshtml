@@ -47,22 +47,22 @@
                                 <tbody>
                                     @foreach(var m in Model) {
                                     <tr>
-                                        <td>@m.BurialId</td>
-                                        <td>@m.BurialNumber</td>
-                                        <td>@m.SquareNorthSouth</td>
-                                        <td>@m.NorthSouth</td>
-                                        <td>@m.SquareEastWest</td>
-                                        <td>@m.EastWest</td>
-                                        <td>@m.Area</td>
-                                        <td>@m.Textile_Color_Value</td>
-                                        <td>@m.Textile_Structure_Value</td>
-                                        <td>@m.Textile_Function_Value</td>
-                                        <td>@m.Sex</td>
-                                        <td>@m.Depth</td>
-                                        <td>@m.Length</td>
-                                        <td>@m.AgeAtDeath</td>
-                                        <td>@m.HeadDirection</td>
-                                        <td>@m.HairColor</td>
+                                        <td>@m.id</td>
+                                        <td>@m.burialnumber</td>
+                                        <td>@m.squarenorthsouth</td>
+                                        <td>@m.northsouth</td>
+                                        <td>@m.squareeastwest</td>
+                                        <td>@m.eastwest</td>
+                                        <td>@m.area</td>
+                                        @*<td>@m.textile_color_value</td>
+                                        <td>@m.textile_structure_value</td>
+                                        <td>@m.textilefunction_value</td>*@
+                                        <td>@m.sex</td>
+                                        <td>@m.depth</td>
+                                        <td>@m.length</td>
+                                        <td>@m.ageatdeath</td>
+                                        <td>@m.headdirection</td>
+                                        <td>@m.haircolor</td>
                                     </tr>
                                         }
                                 </tbody>
