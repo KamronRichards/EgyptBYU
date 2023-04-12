@@ -1,5 +1,6 @@
 ﻿using EgyptBYU.Models;
 using Microsoft.AspNetCore.Authorization;
+﻿using EgyptBYU.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,9 +14,11 @@ namespace EgyptBYU.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
+            _db = db;
             _logger = logger;
         }
 
@@ -26,7 +29,8 @@ namespace EgyptBYU.Controllers
 
         public IActionResult Burials()
         {
-            return View();
+            IEnumerable<MummyEntity> burialmain = _db.burialmain.ToList();
+            return View(burialmain);
         }
         public IActionResult UnAnalysis()
         {
