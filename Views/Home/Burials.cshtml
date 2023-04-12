@@ -1,61 +1,104 @@
 ﻿@{
     ViewData["Title"] = "Burial Main";
 }
+@model IEnumerable<MummyEntity>
+
 <h1>@ViewData["Title"]</h1>
 
 <!DOCTYPE html>
 <html lang="en">
 <body>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Database</h1>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Database</h1>
 
-                    <div class="card mb-4">
+                <div class="card mb-4">
 
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        DataTable Example
                     </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            DataTable Example
-                        </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
+                    <div class="card-body">
+                        <div>
+                            <table className="table table-striped table-bordered table-hover table-sm">
+                                <thead className="thead-dark">
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>Burial Id</th>
+                                        <th>Burial Number</th>
+                                        <th>Square North South</th>
+                                        <th>North South</th>
+                                        <th>SquareEastWest</th>
+                                        <th>East West</th>
+                                        <th>Area</th>
+                                        <th>Textile Color</th>
+                                        <th>Textile Structure</th>
+                                        <th>Textile Function</th>
+                                        <th>Sex</th>
+                                        <th>Depth</th>
+                                        <th>Length</th>
+                                        <th>Age at Death </th>
+                                        <th>Head Direction</th>
+                                        <th>Hair Color</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach(var m in Model) {
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td>@m.BurialId</td>
+                                        <td>@m.BurialNumber</td>
+                                        <td>@m.SquareNorthSouth</td>
+                                        <td>@m.NorthSouth</td>
+                                        <td>@m.SquareEastWest</td>
+                                        <td>@m.EastWest</td>
+                                        <td>@m.Area</td>
+                                        <td>@m.Textile_Color_Value</td>
+                                        <td>@m.Textile_Structure_Value</td>
+                                        <td>@m.Textile_Function_Value</td>
+                                        <td>@m.Sex</td>
+                                        <td>@m.Depth</td>
+                                        <td>@m.Length</td>
+                                        <td>@m.AgeAtDeath</td>
+                                        <td>@m.HeadDirection</td>
+                                        <td>@m.HairColor</td>
                                     </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                    </tr>
+                                        }
                                 </tbody>
                             </table>
+
+                            using Npgsql;
+
+                            // Set up the connection string
+                            var connectionString = "Server=myServer;Database=myDatabase;User Id=myUsername;Password=myPassword;";
+
+                            // Establish a connection
+                            using (var connection = new NpgsqlConnection(connectionString))
+                            {
+                            connection.Open();
+
+                            // Define the SQL query
+                            var query = "SELECT * FROM customers";
+
+                            // Execute the query and retrieve the data reader
+                            using (var command = new NpgsqlCommand(query, connection))
+                            using (var reader = command.ExecuteReader())
+                            {
+                            // Loop through the data and output to console
+                            while (reader.Read())
+                            {
+                            Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
+                            }
+                            }
+                            }
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
+        </main>
 
-        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
