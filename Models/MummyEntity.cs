@@ -8,6 +8,7 @@ namespace EgyptBYU.Models
 {
     public class MummyEntity
     {
+        #nullable enable
         [Key]
         public int BurialId { get; set; }
         public int? BurialNumber { get; set; }
