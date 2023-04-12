@@ -28,8 +28,8 @@ namespace EgyptBYU.Controllers
 
         public IActionResult Burials()
         {
-            IEnumerable<MummyEntity> mummy = _db.mummy.ToList();
-            return View(mummy);
+            IEnumerable<MummyEntity> burialmain = _db.burialmain.ToList();
+            return View(burialmain);
         }
 
         public IActionResult UnAnalysis()

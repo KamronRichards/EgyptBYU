@@ -10,23 +10,35 @@ namespace EgyptBYU.Models
     {
         #nullable enable
         [Key]
-        public int BurialId { get; set; }
-        public int? BurialNumber { get; set; }
-        public string? SquareNorthSouth { get; set; }
-        public string? NorthSouth { get; set; }
-        public string? SquareEastWest { get; set; }
-        public string? EastWest { get; set; }
-        public string? Area { get; set; }
-        public string? Textile_Color_Value { get; set; }
-        public string? Textile_Structure_Value { get; set; }
-        public string? TextileFunction_Value { get; set; }
-        public string? Sex { get; set; }
-        public int? Depth { get; set; }
-        public int? Length { get; set; }
-        public int? AgeAtDeath { get; set; }
-        public string? HeadDirection { get; set; }
-        public string? HairColor { get; set; }
-        public string? FaceBundles { get; set; }
+        public long id { get; set; }
+        public string? burialnumber { get; set; }
+        public string? squarenorthsouth { get; set; }
+        public string? northsouth { get; set; }
+        public string? squareeastwest { get; set; }
+        public string? eastwest { get; set; }
+        public string? area { get; set; }
+        public string? sex { get; set; }
+        public string? depth { get; set; }
+        public string? length { get; set; }
+        public string? ageatdeath { get; set; }
+        public string? headdirection { get; set; }
+        public string? haircolor { get; set; }
+        public string? facebundles { get; set; }
 
+    }
+
+    public class Color
+    {
+        public string? textile_color_value { get; set; }
+    }
+
+    public class Structure
+    {
+        public string? textile_structure_value { get; set; }
+    }
+
+    public class Function
+    {
+        public string? textilefunction_value { get; set; }
     }
 }

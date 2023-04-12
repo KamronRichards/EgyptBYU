@@ -16,7 +16,7 @@ namespace EgyptBYU.Data
         {
         }
 
-        public DbSet<MummyEntity> mummy { get; set; }
+        public DbSet<MummyEntity> burialmain { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
