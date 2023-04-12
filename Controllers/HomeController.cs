@@ -1,5 +1,6 @@
+﻿using EgyptBYU.Models;
+using Microsoft.AspNetCore.Authorization;
 ﻿using EgyptBYU.Data;
-using EgyptBYU.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -31,12 +32,10 @@ namespace EgyptBYU.Controllers
             IEnumerable<MummyEntity> burialmain = _db.burialmain.ToList();
             return View(burialmain);
         }
-
         public IActionResult UnAnalysis()
         {
             return View();
         }
-
         public IActionResult SupAnalysis()
         {
             return View();

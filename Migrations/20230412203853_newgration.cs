@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace EgyptBYU.Data.Migrations
+namespace EgyptBYU.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class newgration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,11 +48,36 @@ namespace EgyptBYU.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Burialmain",
+                columns: table => new
+                {
+                    id = table.Column<long>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    burialnumber = table.Column<string>(nullable: true),
+                    squarenorthsouth = table.Column<string>(nullable: true),
+                    northsouth = table.Column<string>(nullable: true),
+                    squareeastwest = table.Column<string>(nullable: true),
+                    eastwest = table.Column<string>(nullable: true),
+                    area = table.Column<string>(nullable: true),
+                    sex = table.Column<string>(nullable: true),
+                    depth = table.Column<string>(nullable: true),
+                    length = table.Column<string>(nullable: true),
+                    ageatdeath = table.Column<string>(nullable: true),
+                    headdirection = table.Column<string>(nullable: true),
+                    haircolor = table.Column<string>(nullable: true),
+                    facebundles = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Burialmain", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -73,7 +98,7 @@ namespace EgyptBYU.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -162,8 +187,7 @@ namespace EgyptBYU.Data.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -189,8 +213,7 @@ namespace EgyptBYU.Data.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -209,6 +232,9 @@ namespace EgyptBYU.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Burialmain");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
