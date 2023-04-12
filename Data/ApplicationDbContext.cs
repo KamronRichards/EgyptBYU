@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using EgyptBYU.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,8 @@ namespace EgyptBYU.Data
             : base(options)
         {
         }
+
+        public DbSet<MummyEntity> mummy { get; set; }
+
     }
 }
