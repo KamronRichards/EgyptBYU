@@ -23,8 +23,8 @@
                     </div>
                     <div class="card-body">
                         <div>
-                            <table className="table table-striped table-bordered table-hover table-sm">
-                                <thead className="thead-dark">
+                            <table class="table table-striped table-bordered table-hover table-sm">
+                                <thead class="thead-dark">
                                     <tr>
                                         <th>Burial Id</th>
                                         <th>Burial Number</th>
@@ -33,9 +33,6 @@
                                         <th>SquareEastWest</th>
                                         <th>East West</th>
                                         <th>Area</th>
-                                        <th>Textile Color</th>
-                                        <th>Textile Structure</th>
-                                        <th>Textile Function</th>
                                         <th>Sex</th>
                                         <th>Depth</th>
                                         <th>Length</th>
@@ -54,9 +51,6 @@
                                         <td>@m.squareeastwest</td>
                                         <td>@m.eastwest</td>
                                         <td>@m.area</td>
-                                        @*<td>@m.textile_color_value</td>
-        <td>@m.textile_structure_value</td>
-        <td>@m.textilefunction_value</td>*@
                                         <td>@m.sex</td>
                                         <td>@m.depth</td>
                                         <td>@m.length</td>
@@ -70,31 +64,6 @@
                                         }
                                 </tbody>
                             </table>
-
-                            @*using Npgsql;
-
-                            // Set up the connection string
-                            var connectionString = "Server=myServer;Database=myDatabase;User Id=myUsername;Password=myPassword;";
-
-                            // Establish a connection
-                            using (var connection = new NpgsqlConnection(connectionString))
-                            {
-                            connection.Open();
-
-                            // Define the SQL query
-                            var query = "SELECT * FROM customers";
-
-                            // Execute the query and retrieve the data reader
-                            using (var command = new NpgsqlCommand(query, connection))
-                            using (var reader = command.ExecuteReader())
-                            {
-                            // Loop through the data and output to console
-                            while (reader.Read())
-                            {
-                            Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
-                            }
-                            }
-                            }*@
                         </div>
                     </div>
                 </div>
