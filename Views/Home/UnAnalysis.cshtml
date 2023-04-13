@@ -1,58 +1,133 @@
 ﻿@{
-    ViewData["Title"] = "Unsupervised Analysis";
+    ViewData["Title"] = "Unsupervised Analysis:";
 }
 <h1>@ViewData["Title"]</h1>
 
+@*<!DOCTYPE html>
+    <html lang="en">
+
+    <body>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Charts</h1>
+
+                    <div class="card mb-4">
+
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>
+                            Area Chart Example
+                            <img src="~/img/depth_color.png" height="300"  />
+                        </div>
+                        <div class="card-body"><canvas id="myAreaChart" width="100" height="30"></canvas></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    Bar Chart Example
+                                    <img src="~/img/depth_age.png" height="300" />
+                                </div>
+                                <div class="card-body"><canvas id="myBarChart" width="100" height="50"></canvas></div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-pie me-1"></i>
+                                    Pie Chart Example
+                                    <img src="~/img/depth_function.png" height="300" />
+                                </div>
+                                <div class="card-body"><canvas id="myPieChart" width="100" height="50"></canvas></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-pie-demo.js"></script>
+    </body>
+    </html>*@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+    <title>Changes in Burial Practices Over Time</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
+        .card {
+            margin: 20px;
+            width: 300px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+            .card img {
+                width: 100%;
+                height: auto;
+            }
+
+            .card h2 {
+                padding: 10px;
+                margin: 0;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+            }
+    </style>
+</head>
 <body>
-    <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Charts</h1>
+    <h2>Changes in Burial Practices Over Time</h2>
+    <br />
 
-                <div class="card mb-4">
-
-                </div>
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        Area Chart Example
-                    </div>
-                    <div class="card-body"><canvas id="myAreaChart" width="100" height="30"></canvas></div>
-
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-bar me-1"></i>
-                                Bar Chart Example
-                            </div>
-                            <div class="card-body"><canvas id="myBarChart" width="100" height="50"></canvas></div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-pie me-1"></i>
-                                Pie Chart Example
-                            </div>
-                            <div class="card-body"><canvas id="myPieChart" width="100" height="50"></canvas></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+    <div class="container">
+        <div class="card">
+            <h2>Depth Age</h2>
+            <img src="~/img/depth_age.png" />
+        </div>
+        <br />
+        <div class="card">
+            <h2>Depth Color</h2>
+            <img src="~/img/depth_color.png" />
+        </div>
+        <br />
+        <div class="card">
+            <h2>Depth Function</h2>
+            <img src="~/img/depth_function.png" />
+        </div>
+        <br />
+        <div class="card">
+            <h2>Depth Head</h2>
+            <img src="~/img/depth_head.png" />
+        </div>
+        <br />
+        <div class="card">
+            <h2>Depth Material</h2>
+            <img src="~/img/depth_material.png" />
+        </div>
+        <br />
+        <div class="card">
+            <h2>Depth Sex</h2>
+            <img src="~/img/depth_sex.png" />
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="assets/demo/chart-pie-demo.js"></script>
+    <br />
+    <br />
 </body>
 </html>
