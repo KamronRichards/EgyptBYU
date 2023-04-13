@@ -37,6 +37,7 @@
         </nav>
     </header>
     <div class="container">
+        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -44,7 +45,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - BYU | Egypt
+            &copy; 2023 - BYU | Egypt | @Html.ActionLink("Privacy", "Privacy", "Home")
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -53,3 +54,4 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+@*comment*@
