@@ -55,20 +55,23 @@
                                         <td>@m.eastwest</td>
                                         <td>@m.area</td>
                                         @*<td>@m.textile_color_value</td>
-                                        <td>@m.textile_structure_value</td>
-                                        <td>@m.textilefunction_value</td>*@
+        <td>@m.textile_structure_value</td>
+        <td>@m.textilefunction_value</td>*@
                                         <td>@m.sex</td>
                                         <td>@m.depth</td>
                                         <td>@m.length</td>
                                         <td>@m.ageatdeath</td>
                                         <td>@m.headdirection</td>
                                         <td>@m.haircolor</td>
+
+                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@m.id">Edit</a></td>
+                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@m.id">Delete</a></td>
                                     </tr>
                                         }
                                 </tbody>
                             </table>
 
-                            using Npgsql;
+                            @*using Npgsql;
 
                             // Set up the connection string
                             var connectionString = "Server=myServer;Database=myDatabase;User Id=myUsername;Password=myPassword;";
@@ -91,7 +94,7 @@
                             Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
                             }
                             }
-                            }
+                            }*@
                         </div>
                     </div>
                 </div>
