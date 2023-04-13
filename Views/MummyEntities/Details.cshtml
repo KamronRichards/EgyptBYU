@@ -1,0 +1,96 @@
+﻿@model EgyptBYU.Models.MummyEntity
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MummyEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.burialnumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.burialnumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.squarenorthsouth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.squarenorthsouth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.northsouth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.northsouth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.squareeastwest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.squareeastwest)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eastwest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eastwest)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.area)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.area)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.depth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.depth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.length)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.length)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ageatdeath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ageatdeath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.headdirection)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.headdirection)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.haircolor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.haircolor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.facebundles)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.facebundles)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

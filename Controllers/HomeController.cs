@@ -33,10 +33,13 @@ namespace EgyptBYU.Controllers
             return View();
         }
 
-        public IActionResult Burials()
+        public IActionResult Burials(int? pageNumber)
         {
-            IEnumerable<MummyEntity> burialmain = _db.burialmain.ToList();
-            return View(burialmain);
+            int pageSize = 10;
+
+            //IEnumerable<MummyEntity> burialmain = _db.burialmain.ToList();
+            return View(PaginatedList<MummyEntity>.Create(_db.burialmain.ToList(),
+                pageNumber ?? 1, pageSize));
         }
         [HttpGet][Authorize(Roles ="Admin")]
         public IActionResult Add()
