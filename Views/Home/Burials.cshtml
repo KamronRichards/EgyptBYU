@@ -76,6 +76,9 @@
                             <a asp-action="Burials" asp-route-pageNumber="@(Model.PageIndex+1)" class="btn btn-default @nextDisabled">
                                 Next
                             </a>
+                            <a asp-action="Burials" asp-route-pageNumber="@Model.TotalPages" class="btn btn-default">
+                                Last Page
+                            </a>
                             <br />
                             <a>
                                 Page: @(Model.PageIndex) of @(Model.TotalPages)

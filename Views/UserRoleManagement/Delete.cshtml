@@ -1,0 +1,11 @@
+﻿@model UserRole
+
+<h2>Confirm Delete</h2>
+<h3>Are you sure you want to delete the record with this id: @Model.UserId</h3>
+
+<form method="post" asp-controller="UserRoleManagement" asp-action="Delete">
+    <button type="submit">Delete</button>
+    <a asp-controller="UserRoleManagement" asp-action="Index" class="btn btn-primary">Cancel</a>
+
+    <input type="hidden" asp-for="UserId" />
+</form>

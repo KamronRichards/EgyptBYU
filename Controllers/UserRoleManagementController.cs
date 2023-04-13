@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using EgyptBYU.Data;
 using EgyptBYU.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,12 +14,15 @@ namespace EgyptBYU.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
+        private ApplicationDbContext newContext { get; set; }
 
         public UserRoleManagementController(UserManager<IdentityUser> userManager,
-                                            RoleManager<IdentityRole> roleManager)
+                                            RoleManager<IdentityRole> roleManager,
+                                            ApplicationDbContext db)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
+            newContext = db;
         }
 
         [HttpGet]
@@ -122,5 +126,45 @@ namespace EgyptBYU.Controllers
 
             return RedirectToAction(nameof(DisplayRoles));
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(string userId)
+        {
+            //find user by userId
+            var user = await userManager.FindByIdAsync(userId);
+
+            return View(user);
+        }
+
+        //[HttpPost]
+        //public IActionResult DeleteUser(IdentityUserRole<string> userId1)
+        //{
+        //    newContext.UserRoles.Remove(UserId);
+        //    newContext.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            // Find user by userId
+            var user = await userManager.FindByIdAsync(userId);
+
+            if (user != null)
+            {
+                // Delete user
+                var result = await userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    // Redirect to index
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+
+            // If user is not found or delete fails, return to index with error message
+            TempData["ErrorMessage"] = $"Failed to delete user with ID {userId}.";
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }

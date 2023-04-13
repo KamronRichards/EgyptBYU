@@ -55,7 +55,8 @@ namespace EgyptBYU.Controllers
                 newContext.Add(me);
                 newContext.SaveChanges();
 
-                return RedirectToAction("burials");
+                int lastPageNumber = (int)Math.Ceiling((decimal)newContext.burialmain.Count() / 10);
+                return RedirectToAction("Burials", new { pageNumber = lastPageNumber });
             }
             else
             {
@@ -91,7 +92,8 @@ namespace EgyptBYU.Controllers
 
             newContext.burialmain.Remove(me);
             newContext.SaveChanges();
-            return RedirectToAction("burials");
+            int lastPageNumber = (int)Math.Ceiling((decimal)newContext.burialmain.Count() / 10);
+            return RedirectToAction("Burials", new { pageNumber = lastPageNumber });
         }
         [HttpGet]
         [Authorize(Roles = "Admin")]
@@ -110,7 +112,8 @@ namespace EgyptBYU.Controllers
 
             newContext.Update(editME);
             newContext.SaveChanges();
-            return RedirectToAction("Burials");
+            int lastPageNumber = (int)Math.Ceiling((decimal)newContext.burialmain.Count() / 10);
+            return RedirectToAction("Burials", new { pageNumber = lastPageNumber });
         }
     }
 }
