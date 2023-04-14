@@ -16,6 +16,15 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
+                        <form asp-action="Burials" method="get">
+                            <div class="form-actions no-color">
+                                <p>
+                                    Filter by : <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                                    <input type="submit" value="Search" class="btn btn-default" /> |
+                                    <a asp-action="Burials">Back to Full List</a>
+                                </p>
+                            </div>
+                        </form>
                     </div>
                     <div class="card-body">
                         <div>
