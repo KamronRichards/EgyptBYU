@@ -33,6 +33,7 @@ namespace EgyptBYU.Controllers
             return View();
         }
 
+        //Controller that adds the pagination and filtering of the burials database page
         public IActionResult Burials(int? pageNumber, string searchString)
         {
             int pageSize = 10;
@@ -45,23 +46,24 @@ namespace EgyptBYU.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                li = li.Where(s => s.length.Contains(searchString));
-                                   //s.area.Contains(searchString) ||
-                                   //s.depth.Contains(searchString) ||
-                                   //s.headdirection.Contains(searchString) ||
-                                   //s.northsouth.Contains(searchString) ||
-                                   //s.eastwest.Contains(searchString) ||
-                                   //s.squareeastwest.Contains(searchString) ||
-                                   //s.squarenorthsouth.Contains(searchString) ||
-                                   //s.sex.Contains(searchString) ||
-                                   //s.ageatdeath.Contains(searchString));
+                li = li.Where(s => s.length.Contains(searchString) ||
+                                    s.area.Contains(searchString) ||
+                                    s.depth.Contains(searchString) ||
+                                    s.headdirection.Contains(searchString) ||
+                                    s.northsouth.Contains(searchString) ||
+                                    s.eastwest.Contains(searchString) ||
+                                    s.squareeastwest.Contains(searchString) ||
+                                    s.squarenorthsouth.Contains(searchString) ||
+                                    s.sex.Contains(searchString) ||
+                                    s.haircolor.Contains(searchString) ||
+                                    s.ageatdeath.Contains(searchString));
             }
 
             return View(PaginatedList<MummyEntity>.Create(li.ToList(),
                 pageNumber ?? 1, pageSize));
         }
 
-
+        //Adds the ability to add records
         [HttpGet][Authorize(Roles ="Admin")]
         public IActionResult Add()
         {
@@ -84,10 +86,14 @@ namespace EgyptBYU.Controllers
                 return View(me);
             }
         }
+
+        //View for the Unsupervised analysis page
         public IActionResult UnAnalysis()
         {
             return View();
         }
+
+        //View for the Supervised analysis page
         public IActionResult SupAnalysis()
         {
             return View();
