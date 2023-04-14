@@ -12,7 +12,7 @@
 
 @model EgyptBYU.Models.MummyEntity
 
-<h2>Enter a new burial record</h2>
+<h4>Enter the following fields to predict the head direction of a mummy with those characteristics</h4>
 
 <form id="makeitgoform">
     <!-- Add your input fields here -->
@@ -63,11 +63,14 @@
         <option value="TR_E">TR_E</option>
         <option value="Y">Yes</option>
     </select>
-
+    <br />
     <button name="harvey" id="makeitgo" type="button" class="btn btn-primary">Submit</button>
     <div asp-validation-summary="All"></div>
 </form>
+<br />
+<h4>The predicted head direction is (W = West and E =East): </h4>
 <div id="resultContainer"></div>
+<br />
 <br />
 <br />
 
