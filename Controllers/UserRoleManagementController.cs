@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+//controlls all the admin pages for roles and accounts
+
 namespace EgyptBYU.Controllers
 {
     [Authorize(Roles ="Admin")]

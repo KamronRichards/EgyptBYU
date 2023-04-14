@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+    @*This is the view to display the records on the Burials page*@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
@@ -62,31 +63,29 @@
                                         <th>Hair Color</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
-                                        <th>Add</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var m in Model)
                                     {
-                                    <tr>
-                                        <td>@m.id</td>
-                                        <td>@m.burialnumber</td>
-                                        <td>@m.squarenorthsouth</td>
-                                        <td>@m.northsouth</td>
-                                        <td>@m.squareeastwest</td>
-                                        <td>@m.eastwest</td>
-                                        <td>@m.area</td>
-                                        <td>@m.sex</td>
-                                        <td>@m.depth</td>
-                                        <td>@m.length</td>
-                                        <td>@m.ageatdeath</td>
-                                        <td>@m.headdirection</td>
-                                        <td>@m.haircolor</td>
+                                        <tr>
+                                            <td>@m.id</td>
+                                            <td>@m.burialnumber</td>
+                                            <td>@m.squarenorthsouth</td>
+                                            <td>@m.northsouth</td>
+                                            <td>@m.squareeastwest</td>
+                                            <td>@m.eastwest</td>
+                                            <td>@m.area</td>
+                                            <td>@m.sex</td>
+                                            <td>@m.depth</td>
+                                            <td>@m.length</td>
+                                            <td>@m.ageatdeath</td>
+                                            <td>@m.headdirection</td>
+                                            <td>@m.haircolor</td>
 
-                                        <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@m.id">Edit</a></td>
-                                        <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@m.id">Delete</a></td>
-                                        <td><a asp-controller="Home" asp-action="Add" asp-route-id="@m.id">Add</a></td>
-                                    </tr>
+                                            <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@m.id">Edit</a></td>
+                                            <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@m.id">Delete</a></td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
@@ -104,6 +103,7 @@
                             <a asp-action="Burials" asp-route-pageNumber="@Model.TotalPages" class="btn btn-default">
                                 Last Page
                             </a>
+                            <a asp-controller="Home" asp-action="Add" class="btn btn-default">Add Record</a>
                             <br />
                             <a>
                                 Page: @(Model.PageIndex) of @(Model.TotalPages)

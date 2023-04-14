@@ -9,6 +9,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+//controlls all the main pages
+
 namespace EgyptBYU.Controllers
 {
     public class HomeController : Controller

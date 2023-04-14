@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 
+// this is the api controller... it returns the necessary data for the supervised analysis
+
 namespace EgyptBYU.Controllers
 {
     [ApiController]

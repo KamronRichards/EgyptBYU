@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http.Features
 
+@*Displays cookie*@
+
 @{
     var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
     var showBanner = !consentFeature?.CanTrack ?? false;

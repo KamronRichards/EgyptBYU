@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+// sets the fields for the mummy data
+
 namespace EgyptBYU.Models
 {
     public class MummyEntity
