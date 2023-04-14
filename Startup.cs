@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
 
 namespace EgyptBYU
 {
@@ -42,6 +43,10 @@ namespace EgyptBYU
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            var options = new CookiePolicyOptions();
+
+            options.ConsentCookie.SecurePolicy = CookieSecurePolicy.Always;
 
             services.Configure<IdentityOptions>(options =>
             {
