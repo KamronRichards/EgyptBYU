@@ -3,57 +3,72 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+@section scripts {
+    <script type="text/javascript" src="/js/submit.js"></script>
+}
+
 <!DOCTYPE html>
 <html lang="en">
 
-<body>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Charts</h1>
+@model EgyptBYU.Models.MummyEntity
 
-                    <div class="card mb-4">
+<h2>Enter a new burial record</h2>
 
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-chart-area me-1"></i>
-                            Area Chart Example
-                        </div>
-                        <div class="card-body"><canvas id="myAreaChart" width="100" height="30"></canvas></div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Bar Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100" height="50"></canvas></div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-pie me-1"></i>
-                                    Pie Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myPieChart" width="100" height="50"></canvas></div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="assets/demo/chart-pie-demo.js"></script>
-</body>
-</html>
+<form id="makeitgoform">
+    <!-- Add your input fields here -->
+    <label asp-for="squarenorthsouth"></label>
+    <input type="text" name="squarenorthsouth" class="form-control" />
+
+    <label asp-for="squareeastwest"></label>
+    <input type="text" name="squareeastwest" class="form-control" />
+
+    <label asp-for="area"></label>
+    <select name="area" class="form-control">
+        <option value="NE">NE</option>
+        <option value="NNW">NNW</option>
+        <option value="NW">NW</option>
+        <option value="SE">SE</option>
+        <option value="SW">SW</option>
+    </select>
+
+    <label asp-for="sex"></label>
+    <select name="sex" class="form-control">
+        <option value="F">Female</option>
+        <option value="M">Male</option>
+    </select>
+
+    <label asp-for="depth"></label>
+    <input type="text" name="depth" class="form-control" />
+
+    <label asp-for="ageatdeath"></label>
+    <select name="ageatdeath" class="form-control">
+        <option value="A">Adult</option>
+        <option value="C">Child</option>
+        <option value="I">Infant</option>
+        <option value="N">Newborn</option>
+    </select>
+
+    <label asp-for="haircolor"></label>
+    <select name="haircolor" class="form-control" />
+        <option value="A">Brown-Red</option>
+        <option value="B">Brown</option>
+        <option value="D">Blond</option>
+        <option value="K">Black</option>
+        <option value="R">Red/Red-Bl</option>
+        <option value="U">Unknown</option>
+    </select>
+
+    <label asp-for="facebundles"></label>
+    <select name="facebundles" class="form-control" />
+        <option value="TR_E">TR_E</option>
+        <option value="Y">Yes</option>
+    </select>
+
+    <button name="harvey" id="makeitgo" type="button" class="btn btn-primary">Submit</button>
+    <div asp-validation-summary="All"></div>
+</form>
+<div id="resultContainer"></div>
+<br />
+<br />
+
 
