@@ -44,9 +44,6 @@ namespace EgyptBYU
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            var options = new CookiePolicyOptions();
-
-            options.ConsentCookie.SecurePolicy = CookieSecurePolicy.Always;
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -61,6 +58,7 @@ namespace EgyptBYU
 
             services.Configure<CookiePolicyOptions>(options =>
             {
+                options.ConsentCookie.SecurePolicy = CookieSecurePolicy.Always;
                 // This lambda determines whether user consent for non-essential 
                 // cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
