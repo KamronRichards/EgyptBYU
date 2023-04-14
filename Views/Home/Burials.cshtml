@@ -11,7 +11,9 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <div class="card mb-4">
+                <div>
+                    <p>This database is designed to make the work of the BYU Egypt Excavation Project available to the world. It represents the data gained from the excavation from a single person in the Burial Main database.
+                     This page allows you to browse the data as well as filter by certain column criteria. With admin access you can add, edit, and delete records.</p>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
@@ -19,7 +21,21 @@
                         <form asp-action="Burials" method="get">
                             <div class="form-actions no-color">
                                 <p>
-                                    Filter by : <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                                    Filter by : <select id="filterby">
+                                                    <option value="burialnumber">Burial Number</option>
+                                                    <option value="squarenorthsouth">Square North South</option>
+                                                    <option value="northsouth">North South</option>
+                                                    <option value="squareeastwest">Square East West</option>
+                                                    <option value="eastwest">East West</option>
+                                                    <option value="area">Area</option>
+                                                    <option value="sex">Sex</option>
+                                                    <option value="depth">Depth</option>
+                                                    <option value="length">Length</option>
+                                                    <option value="ageatdeath">Age At Death</option>
+                                                    <option value="headdirection">Head Direction</option>
+                                                    <option value="haircolor">Hair Color</option>
+                                                </select> 
+                                    <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
                                     <input type="submit" value="Search" class="btn btn-default" /> |
                                     <a asp-action="Burials">Back to Full List</a>
                                 </p>

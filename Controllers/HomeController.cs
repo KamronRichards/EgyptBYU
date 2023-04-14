@@ -45,16 +45,16 @@ namespace EgyptBYU.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                li = li.Where(s => s.length.Contains(searchString));
-                                   //s.area.Contains(searchString) ||
-                                   //s.depth.Contains(searchString) ||
-                                   //s.headdirection.Contains(searchString) ||
-                                   //s.northsouth.Contains(searchString) ||
-                                   //s.eastwest.Contains(searchString) ||
-                                   //s.squareeastwest.Contains(searchString) ||
-                                   //s.squarenorthsouth.Contains(searchString) ||
-                                   //s.sex.Contains(searchString) ||
-                                   //s.ageatdeath.Contains(searchString));
+                li = li.Where(s => s.length.Contains(searchString) ||
+                                    s.area.Contains(searchString) ||
+                                    s.depth.Contains(searchString) ||
+                                    s.headdirection.Contains(searchString) ||
+                                    s.northsouth.Contains(searchString) ||
+                                    s.eastwest.Contains(searchString) ||
+                                    s.squareeastwest.Contains(searchString) ||
+                                    s.squarenorthsouth.Contains(searchString) ||
+                                    s.sex.Contains(searchString) ||
+                                    s.ageatdeath.Contains(searchString));
             }
 
             return View(PaginatedList<MummyEntity>.Create(li.ToList(),
