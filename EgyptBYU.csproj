@@ -32,8 +32,4 @@
     <Folder Include="Data\Migrations\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include=".ebextensions\" />
-  </ItemGroup>
 </Project>
